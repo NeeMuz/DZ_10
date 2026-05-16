@@ -1,0 +1,4910 @@
+{
+  "info": {
+    "_postman_id": "25702b7f-e693-478b-a8f8-5fed5e106184",
+    "name": "[P31] API",
+    "description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32590352",
+    "_collection_link": "https://go.postman.co/collection/32590352-25702b7f-e693-478b-a8f8-5fed5e106184?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "FastAPI",
+      "item": [
+        {
+          "name": "users",
+          "item": [
+            {
+              "name": "Create an user",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 12\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url_local}}/users/",
+                  "host": [
+                    "{{base_url_local}}"
+                  ],
+                  "path": [
+                    "users",
+                    ""
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[405] Dont allowed",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}/users/",
+                      "host": [
+                        "{{base_url_local}}"
+                      ],
+                      "path": [
+                        "users",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Tue, 31 Mar 2026 17:18:45 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "22"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"Not Found\"\n}"
+                },
+                {
+                  "name": "[200] Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}/users/",
+                      "host": [
+                        "{{base_url_local}}"
+                      ],
+                      "path": [
+                        "users",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Tue, 31 Mar 2026 17:29:47 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "54"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33,\n    \"id\": 1\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get all users",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33\n}"
+                },
+                "url": {
+                  "raw": "{{base_url_local}}/users?poplate=*",
+                  "host": [
+                    "{{base_url_local}}"
+                  ],
+                  "path": [
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "poplate",
+                      "value": "*"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url_local}}/users/",
+                      "host": [
+                        "{{base_url_local}}"
+                      ],
+                      "path": [
+                        "users",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Tue, 31 Mar 2026 17:55:36 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "166"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 1\n    },\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 2\n    },\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 3\n    }\n]"
+                },
+                {
+                  "name": "[200] Filter: Adult users",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url_local}}/users?adult=True",
+                      "host": [
+                        "{{base_url_local}}"
+                      ],
+                      "path": [
+                        "users"
+                      ],
+                      "query": [
+                        {
+                          "key": "adult",
+                          "value": "True"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Thu, 02 Apr 2026 17:48:11 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "56"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 1\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Get an user",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33\n}"
+                },
+                "url": {
+                  "raw": "{{base_url_local}}/users/:id",
+                  "host": [
+                    "{{base_url_local}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url_local}}/users/",
+                      "host": [
+                        "{{base_url_local}}"
+                      ],
+                      "path": [
+                        "users",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Tue, 31 Mar 2026 17:55:36 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "166"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 1\n    },\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 2\n    },\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 3\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Delete an user",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"John\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33\n}"
+                },
+                "url": {
+                  "raw": "{{base_url_local}}/users/:id",
+                  "host": [
+                    "{{base_url_local}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] ok",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url_local}}/users/",
+                      "host": [
+                        "{{base_url_local}}"
+                      ],
+                      "path": [
+                        "users",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Tue, 31 Mar 2026 17:55:36 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "166"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 1\n    },\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 2\n    },\n    {\n        \"name\": \"John\",\n        \"email\": \"john@doe.com\",\n        \"age\": 33,\n        \"id\": 3\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Update an user",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Jane\",\n    \"email\": \"john@doe.com\",\n    \"age\": 33\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url_local}}/users/:id",
+                  "host": [
+                    "{{base_url_local}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "products",
+          "item": [
+            {
+              "name": "Get all products",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}{{prefix}}/products?filters[price][eq]=25000",
+                  "host": [
+                    "{{base_url}}{{prefix}}"
+                  ],
+                  "path": [
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "filters[price][eq]",
+                      "value": "25000"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 08:54:54 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "153"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Ноутбук\",\n        \"price\": 45000\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Смартфон\",\n        \"price\": 25000\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Навушники\",\n        \"price\": 4000\n    }\n]"
+                },
+                {
+                  "name": "[200] Success ASC sort by price",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products?sort=asc",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "sort",
+                          "value": "asc"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 08:56:01 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "153"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Навушники\",\n        \"price\": 4000\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Смартфон\",\n        \"price\": 25000\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Ноутбук\",\n        \"price\": 45000\n    }\n]"
+                },
+                {
+                  "name": "[200] Success DESC sort by price",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products?sort=desc",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "sort",
+                          "value": "desc"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 08:56:33 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "153"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Ноутбук\",\n        \"price\": 45000\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Смартфон\",\n        \"price\": 25000\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Навушники\",\n        \"price\": 4000\n    }\n]"
+                },
+                {
+                  "name": "[200] Success filter lower price",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products?filter_lt=30000",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "filter_lt",
+                          "value": "30000"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 09:52:49 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "104"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Смартфон\",\n        \"price\": 25000\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Навушники\",\n        \"price\": 4000\n    }\n]"
+                },
+                {
+                  "name": "[200] Success filter greater price",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products?filter_gt=30000",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "filter_gt",
+                          "value": "30000"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 09:53:48 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "50"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Ноутбук\",\n        \"price\": 45000\n    }\n]"
+                },
+                {
+                  "name": "[200] Success filters + params",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products?filter_lt=30000&sort=desc",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "filter_lt",
+                          "value": "30000"
+                        },
+                        {
+                          "key": "sort",
+                          "value": "desc"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 09:55:00 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "104"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Смартфон\",\n        \"price\": 25000\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Навушники\",\n        \"price\": 4000\n    }\n]"
+                },
+                {
+                  "name": "[400] Invalid sort parameter",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products?sort=de",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "sort",
+                          "value": "de"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 08:57:08 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "57"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"Invalid sort parameter. Use 'asc' or 'desc'.\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get a product",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}{{prefix}}/products/:id",
+                  "host": [
+                    "{{base_url}}{{prefix}}"
+                  ],
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products/:id",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 09:36:44 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "48"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 1,\n    \"name\": \"Ноутбук\",\n    \"price\": 45000\n}"
+                },
+                {
+                  "name": "[404] Product not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products/:id",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "15"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Sat, 04 Apr 2026 09:37:32 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "30"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"Product not found\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "auth",
+          "item": [
+            {
+              "name": "users",
+              "item": [
+                {
+                  "name": "Update a profile",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzc1NzUyMzY4fQ.-C-akg4kk5iXWJRhfnlqrZI148J-sVy0kWoTyXiHh5o",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"text\": \"test1wdfs22\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/users/:username",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":username"
+                      ],
+                      "variable": [
+                        {
+                          "key": "username",
+                          "value": "johndoe"
+                        }
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Change Password",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzc1NzU4MjA0fQ.AzOPejT2riYCkhypMZJr_vi2wO4zeG-sVMjjomU8liY",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"old_password\": \"123456Q\",\n    \"new_password\": \"123456P\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/users/change-password",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "users",
+                        "change-password"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "admin",
+              "item": [
+                {
+                  "name": "Get admin data",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc3NTc1ODcxN30.o-mx7EI3ifS4Dby3B-DTXE2t3VDNNdA_RNd-PRaL1mQ",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"old_password\": \"123456Q\",\n    \"new_password\": \"123456P\"\n}"
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/users/system-info",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "users",
+                        "system-info"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[403] Not enough permissions",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{base_url}}{{prefix}}/users/system-info",
+                          "host": [
+                            "{{base_url}}{{prefix}}"
+                          ],
+                          "path": [
+                            "users",
+                            "system-info"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "date",
+                          "value": "Thu, 09 Apr 2026 17:42:31 GMT"
+                        },
+                        {
+                          "key": "server",
+                          "value": "uvicorn"
+                        },
+                        {
+                          "key": "content-length",
+                          "value": "35"
+                        },
+                        {
+                          "key": "content-type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"detail\": \"Not enough permissions\"\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Register a new user",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"john@doe.com\",\n    \"password\": \"123456Q\",\n    \"username\": \"johndoe\",\n    \"text\": \"test1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}{{prefix}}/auth/register",
+                  "host": [
+                    "{{base_url}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Login a user",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"password\": \"admin123\",\n    \"username\": \"admin\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}{{prefix}}/auth/login",
+                  "host": [
+                    "{{base_url}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Forgot Password",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"admin@example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}{{prefix}}/auth/forgot-password",
+                  "host": [
+                    "{{base_url}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "forgot-password"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"email\": \"john@doe.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/auth/forgot-password",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "forgot-password"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Thu, 09 Apr 2026 16:25:12 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "203"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Password reset link sent to email (simulated)\",\n    \"reset_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzc1NzUyODEyfQ.e_6Q679I5jyyQDVk2gRlumoIqgcFdCglZE9LeI6OO6k\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Reset Password",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"new_password\": \"123456L\",\n    \"confirm_password\": \"123456L\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc3NTc1Nzc5Mn0.7zX4vgO-dSFdvTxuQZWVNKV1TByxJ8_5ABvxJky8EUQ\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}{{prefix}}/auth/reset-password",
+                  "host": [
+                    "{{base_url}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "reset-password"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[400] Passwords do not match",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"new_password\": \"123456P\",\n    \"confirm_password\": \"123456L\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzc1NzUyNjcyfQ.OcS9igMihlkNkv7olX4LWfVCydDx591NF0tNom-fLOg\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/auth/reset-password",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "reset-password"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Thu, 09 Apr 2026 16:25:50 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "73"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"Invalid or expired token. Error: 400: Passwords do not match\"\n}"
+                },
+                {
+                  "name": "[200] Success: Password reset successful",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"new_password\": \"123456L\",\n    \"confirm_password\": \"123456L\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwiZXhwIjoxNzc1NzUyNjcyfQ.OcS9igMihlkNkv7olX4LWfVCydDx591NF0tNom-fLOg\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/auth/reset-password",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "reset-password"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "date",
+                      "value": "Thu, 09 Apr 2026 16:26:54 GMT"
+                    },
+                    {
+                      "key": "server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "39"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Password reset successful\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "db",
+          "item": [
+            {
+              "name": "products",
+              "item": [
+                {
+                  "name": "Create a product",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2UiLCJleHAiOjE3NzU5MDU0MzV9.GwPe8XTues_dfQ4i69Bmgzc_jeTKCI-cNQ5BCJz_ygc",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"test_01\",\n    \"description\": \"lorem\",\n    \"price\": 22.5\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Get all products",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2UiLCJleHAiOjE3NzU5MDU0MzV9.GwPe8XTues_dfQ4i69Bmgzc_jeTKCI-cNQ5BCJz_ygc",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "text"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/products",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "products"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "auth",
+              "item": [
+                {
+                  "name": "Create a user",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"password\": \"joe123!@#\",\n    \"username\": \"joe\",\n    \"email\": \"joe@doe.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/register",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "register"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Login a user",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"password\": \"joe123!@#\",\n    \"username\": \"joe\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/login",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "login"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Get all users",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2UiLCJleHAiOjE3NzU5MDU0MzV9.GwPe8XTues_dfQ4i69Bmgzc_jeTKCI-cNQ5BCJz_ygc",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"test_01\",\n    \"description\": \"lorem\",\n    \"price\": 22.5\n}"
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/users",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "users"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "review",
+              "item": [
+                {
+                  "name": "Create a review",
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2UiLCJleHAiOjE3NzU5MDU0MzV9.GwPe8XTues_dfQ4i69Bmgzc_jeTKCI-cNQ5BCJz_ygc",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"rating\": 5,\n    \"text\": \"Some text1\",\n    \"product_id\": 1\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/reviews",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "reviews"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Create a review Copy",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}{{prefix}}/reviews",
+                      "host": [
+                        "{{base_url}}{{prefix}}"
+                      ],
+                      "path": [
+                        "reviews"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}",
+              "host": [
+                "{{base_url}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}{{prefix}}/health",
+              "host": [
+                "{{base_url}}{{prefix}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Django API",
+      "item": [
+        {
+          "name": "News",
+          "item": [
+            {
+              "name": "Categories",
+              "item": [
+                {
+                  "name": "Create a category",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+                          "pm.test('Response body contains created category fields', function () { const data = pm.response.json(); pm.expect(data).to.have.property('id'); pm.expect(data.id).to.be.a('number'); pm.expect(data).to.have.property('name'); pm.expect(data.name).to.eql('Технології'); });"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"Технології\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/categories/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "categories",
+                        ""
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[201] Success Response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"name\": \"Технології\"\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/categories/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "categories",
+                            ""
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:13:57 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, POST, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "31"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"id\": 1,\n    \"name\": \"Технології\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Get categories",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                          "pm.test('Response is an array of categories', function () { const data = pm.response.json(); pm.expect(data).to.be.an('array'); data.forEach(function (item) { pm.expect(item).to.have.property('id'); pm.expect(item.id).to.be.a('number'); pm.expect(item).to.have.property('name'); pm.expect(item.name).to.be.a('string'); }); });",
+                          "pm.test('Categories list is not empty', function () { const data = pm.response.json(); pm.expect(data.length).to.be.above(0); });"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4MzIxOTMyLCJpYXQiOjE3NzcxMTIzMzIsImp0aSI6Ijg0MTkyZjU0MTBhMjRlNWZiYmEzMjlhMDZhZDgzZGVkIiwidXNlcl9pZCI6IjcifQ.3rG8mq2aEXWh58vpETrg0XNhrtKgDqeJTyuOpPQnLUc",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/categories/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "categories",
+                        ""
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[200] Success Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/categories/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "categories",
+                            ""
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:14:40 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, POST, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "63"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Технології\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Спорт\"\n    }\n]"
+                    }
+                  ]
+                },
+                {
+                  "name": "Get a category",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                          "pm.test('Response body contains requested category', function () { const data = pm.response.json(); const requestedId = Number(pm.variables.get('id') || pm.request.url.variables.get('id')); pm.expect(data).to.have.property('id'); pm.expect(data.id).to.be.a('number'); if (!Number.isNaN(requestedId)) { pm.expect(data.id).to.eql(requestedId); } pm.expect(data).to.have.property('name'); pm.expect(data.name).to.be.a('string').and.not.empty; });"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/categories/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "categories",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[200] Success Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/categories/:id/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "categories",
+                            ":id",
+                            ""
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:16:57 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "29"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"id\": 1,\n    \"name\": \"Технології\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Update a category",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                          "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                          "pm.test('Updated category is returned', function () { const data = pm.response.json(); const requestedId = Number(pm.variables.get('id') || pm.request.url.variables.get('id')); pm.expect(data).to.have.property('id'); if (!Number.isNaN(requestedId)) { pm.expect(data.id).to.eql(requestedId); } pm.expect(data).to.have.property('name'); pm.expect(data.name).to.eql('Наука'); });"
+                        ]
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"Наука\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/categories/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "categories",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[200] Success Response",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"name\": \"Наука\"\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/categories/:id/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "categories",
+                            ":id",
+                            ""
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:20:04 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "26"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"id\": 1,\n    \"name\": \"Наука\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delete a category",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                          "pm.test('Status code is 204', function () { pm.response.to.have.status(204); });",
+                          "pm.test('Response body is empty', function () { pm.expect(pm.response.text()).to.eql(''); });"
+                        ]
+                      }
+                    }
+                  ],
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/categories/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "categories",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[204] Success delete",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": ""
+                        },
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/categories/:id/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "categories",
+                            ":id",
+                            ""
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:22:51 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "0"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Tags",
+              "item": [
+                {
+                  "name": "Create a tag",
+                  "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"python\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/tags/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "tags",
+                        ""
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[201] Success Response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"name\": \"python\"\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/tags/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "tags",
+                            ""
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:13:57 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, POST, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "25"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"id\": 1,\n    \"name\": \"python\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Get tags",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/tags/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "tags",
+                        ""
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[200] Success Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/tags/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "tags",
+                            ""
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:14:40 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, POST, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "55"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"python\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"django\"\n    }\n]"
+                    }
+                  ]
+                },
+                {
+                  "name": "Get a tag",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/tags/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "tags",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[200] Success Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/tags/:id/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "tags",
+                            ":id",
+                            ""
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:16:57 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "23"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"id\": 1,\n    \"name\": \"python\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Update a tag",
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"name\": \"django-rest\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/tags/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "tags",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[200] Success Response",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n    \"name\": \"django-rest\"\n}",
+                          "options": {
+                            "raw": {
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/tags/:id/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "tags",
+                            ":id",
+                            ""
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:20:04 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "30"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n    \"id\": 1,\n    \"name\": \"django-rest\"\n}"
+                    }
+                  ]
+                },
+                {
+                  "name": "Delete a tag",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/tags/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        "tags",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "[204] Success delete",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {
+                          "mode": "raw",
+                          "raw": ""
+                        },
+                        "url": {
+                          "raw": "{{base_url_local}}{{prefix}}/news/tags/:id/",
+                          "host": [
+                            "{{base_url_local}}{{prefix}}"
+                          ],
+                          "path": [
+                            "news",
+                            "tags",
+                            ":id",
+                            ""
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "No Content",
+                      "code": 204,
+                      "_postman_previewlanguage": "Text",
+                      "header": [
+                        {
+                          "key": "Date",
+                          "value": "Tue, 21 Apr 2026 17:22:51 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "WSGIServer/0.2 CPython/3.13.7"
+                        },
+                        {
+                          "key": "Vary",
+                          "value": "Accept, Cookie"
+                        },
+                        {
+                          "key": "Allow",
+                          "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                        },
+                        {
+                          "key": "X-Frame-Options",
+                          "value": "DENY"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "0"
+                        },
+                        {
+                          "key": "X-Content-Type-Options",
+                          "value": "nosniff"
+                        },
+                        {
+                          "key": "Referrer-Policy",
+                          "value": "same-origin"
+                        },
+                        {
+                          "key": "Cross-Origin-Opener-Policy",
+                          "value": "same-origin"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Create a article",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+                      "pm.test('Created article payload matches request intent', function () { const data = pm.response.json(); pm.expect(data).to.have.property('id'); pm.expect(data.id).to.be.a('number'); pm.expect(data).to.have.property('title', '1'); pm.expect(data).to.have.property('content', '1'); pm.expect(data).to.have.property('created_date'); pm.expect(data.created_date).to.be.a('string'); pm.expect(data).to.have.property('author'); pm.expect(data).to.have.property('category'); });"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4OTIxMDU5LCJpYXQiOjE3Nzc3MTE0NTksImp0aSI6IjYzMDUwNTk5ZWQxNjQ2ODliNzM2NmIxOTBjMjhmZmQ0IiwidXNlcl9pZCI6IjEifQ.t7gmz2AiaFW6wHFaHf3OoKzNAT_fBGGFzHmvsZl3u0c",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "2ad28ce0-c71d-4298-bb18-579d9a659303",
+                      "src": "/Users/a1d/Desktop/lMedia/BG/Backgrounds/Gemini_Generated_Image_rlrorfrlrorfrlro.png"
+                    },
+                    {
+                      "key": "title",
+                      "value": "testMedia2",
+                      "type": "text",
+                      "uuid": "50b3c497-cee9-4e15-8116-4eb21235d8a0"
+                    },
+                    {
+                      "key": "content",
+                      "value": "testMediaContent2",
+                      "type": "text",
+                      "uuid": "236df478-f100-4551-b309-23ae51407d1d"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ""
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[201] Success Response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"1\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:13:57 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "131"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 3,\n    \"title\": \"1\",\n    \"content\": \"1\",\n    \"created_date\": \"2026-04-21T17:13:57.859444Z\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}"
+                },
+                {
+                  "name": "[401] No Auth",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"22\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 10:05:10 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "WWW-Authenticate",
+                      "value": "Bearer realm=\"api\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "58"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+                },
+                {
+                  "name": "[201] News with image",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "uuid": "2ad28ce0-c71d-4298-bb18-579d9a659303",
+                          "src": "/Users/a1d/Desktop/Simulator Screenshot - iPhone 17 Pro - 2026-04-30 at 10.19.09.png"
+                        },
+                        {
+                          "key": "title",
+                          "value": "testMedia",
+                          "type": "text",
+                          "uuid": "50b3c497-cee9-4e15-8116-4eb21235d8a0"
+                        },
+                        {
+                          "key": "content",
+                          "value": "testMediaContent",
+                          "type": "text",
+                          "uuid": "236df478-f100-4551-b309-23ae51407d1d"
+                        }
+                      ],
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Thu, 30 Apr 2026 17:14:04 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "345"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 5,\n    \"title\": \"testMedia\",\n    \"content\": \"testMediaContent\",\n    \"created_date\": \"2026-04-30T17:14:04.745271Z\",\n    \"author\": {\n        \"id\": 7,\n        \"username\": \"student_06\",\n        \"email\": \"student_06@step.com\"\n    },\n    \"image\": \"http://127.0.0.1:8080/media/articles/2026/04/Simulator_Screenshot_-_iPhone_17_Pro_-_2026-04-30_at_10_tSEyulC.19.09.png\",\n    \"tags\": null,\n    \"comments\": [],\n    \"categories\": []\n}"
+                },
+                {
+                  "name": "[403] Haven't permissions",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "uuid": "2ad28ce0-c71d-4298-bb18-579d9a659303",
+                          "src": "/Users/a1d/Desktop/lMedia/BG/Backgrounds/Gemini_Generated_Image_rlrorfrlrorfrlro.png"
+                        },
+                        {
+                          "key": "title",
+                          "value": "testMedia2",
+                          "type": "text",
+                          "uuid": "50b3c497-cee9-4e15-8116-4eb21235d8a0"
+                        },
+                        {
+                          "key": "content",
+                          "value": "testMediaContent2",
+                          "type": "text",
+                          "uuid": "236df478-f100-4551-b309-23ae51407d1d"
+                        }
+                      ],
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 02 May 2026 08:32:10 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "72"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"У вас нема дозволу робити цю дію.\"\n}"
+                },
+                {
+                  "name": "[401] Unauthorised",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "key": "image",
+                          "type": "file",
+                          "uuid": "2ad28ce0-c71d-4298-bb18-579d9a659303",
+                          "src": "/Users/a1d/Desktop/lMedia/BG/Backgrounds/Gemini_Generated_Image_rlrorfrlrorfrlro.png"
+                        },
+                        {
+                          "key": "title",
+                          "value": "testMedia2",
+                          "type": "text",
+                          "uuid": "50b3c497-cee9-4e15-8116-4eb21235d8a0"
+                        },
+                        {
+                          "key": "content",
+                          "value": "testMediaContent2",
+                          "type": "text",
+                          "uuid": "236df478-f100-4551-b309-23ae51407d1d"
+                        }
+                      ],
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 02 May 2026 08:33:02 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "WWW-Authenticate",
+                      "value": "Bearer realm=\"api\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "96"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"Реквізити перевірки достовірності не надані.\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get news",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                      "pm.test('Response is a list of articles', function () { const data = pm.response.json(); pm.expect(data).to.be.an('array'); data.forEach(function (item) { pm.expect(item).to.have.property('id'); pm.expect(item.id).to.be.a('number'); pm.expect(item).to.have.property('title'); pm.expect(item.title).to.be.a('string'); pm.expect(item).to.have.property('content'); pm.expect(item.content).to.be.a('string'); pm.expect(item).to.have.property('created_date'); }); });"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/?ordering=-title",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "ordering",
+                      "value": "-title"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:14:40 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "437"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 3,\n        \"title\": \"1\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T17:13:57.859444Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"ds\",\n        \"content\": \"ads\",\n        \"created_date\": \"2026-04-21T17:05:01.387374Z\",\n        \"author\": null,\n        \"image\": null,\n        \"tags\": null,\n        \"category\": null\n    },\n    {\n        \"id\": 1,\n        \"title\": \"тест\",\n        \"content\": \"тестовий опис\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": null,\n        \"image\": null,\n        \"tags\": null,\n        \"category\": null\n    }\n]"
+                },
+                {
+                  "name": "[200] Filter by category",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/?category=1",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ],
+                      "query": [
+                        {
+                          "key": "category",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 08:20:01 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "135"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"123\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    }\n]"
+                },
+                {
+                  "name": "[200] Filter by Author",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/?author=1",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ],
+                      "query": [
+                        {
+                          "key": "author",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 08:21:02 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "135"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"123\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    }\n]"
+                },
+                {
+                  "name": "[200] Complex Filters",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/?author=1&category=1",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ],
+                      "query": [
+                        {
+                          "key": "author",
+                          "value": "1"
+                        },
+                        {
+                          "key": "category",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 08:21:55 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "135"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"123\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    }\n]"
+                },
+                {
+                  "name": "[200] Search by query (title, content)",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/?search=2",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ],
+                      "query": [
+                        {
+                          "key": "search",
+                          "value": "2"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 08:23:26 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "267"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 4,\n        \"title\": \"2\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-25T08:23:09.836780Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    },\n    {\n        \"id\": 1,\n        \"title\": \"123\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    }\n]"
+                },
+                {
+                  "name": "[200] Sort by created date - ASC",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/?ordering=-created_date",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ],
+                      "query": [
+                        {
+                          "key": "ordering",
+                          "value": "-created_date"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 08:25:51 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "405"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"123\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"ds\",\n        \"content\": \"ads\",\n        \"created_date\": \"2026-04-21T17:05:01.387374Z\",\n        \"author\": null,\n        \"image\": null,\n        \"tags\": null,\n        \"category\": null\n    },\n    {\n        \"id\": 4,\n        \"title\": \"2\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-25T08:23:09.836780Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    }\n]"
+                },
+                {
+                  "name": "[200] Sort by title - DESC",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/?ordering=-title",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ],
+                      "query": [
+                        {
+                          "key": "ordering",
+                          "value": "-title"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 08:27:44 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "405"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 2,\n        \"title\": \"ds\",\n        \"content\": \"ads\",\n        \"created_date\": \"2026-04-21T17:05:01.387374Z\",\n        \"author\": null,\n        \"image\": null,\n        \"tags\": null,\n        \"category\": null\n    },\n    {\n        \"id\": 4,\n        \"title\": \"2\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-25T08:23:09.836780Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    },\n    {\n        \"id\": 1,\n        \"title\": \"123\",\n        \"content\": \"1\",\n        \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n        \"author\": \"1\",\n        \"image\": null,\n        \"tags\": \"1\",\n        \"category\": \"1\"\n    }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Get metadata news",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "OPTIONS",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ""
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "OPTIONS",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"1\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}"
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:15:35 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, POST, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1051"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"name\": \"Article List\",\n    \"description\": \"\",\n    \"renders\": [\n        \"application/json\",\n        \"text/html\"\n    ],\n    \"parses\": [\n        \"application/json\",\n        \"application/x-www-form-urlencoded\",\n        \"multipart/form-data\"\n    ],\n    \"actions\": {\n        \"POST\": {\n            \"id\": {\n                \"type\": \"integer\",\n                \"required\": false,\n                \"read_only\": true,\n                \"label\": \"ID\"\n            },\n            \"title\": {\n                \"type\": \"string\",\n                \"required\": true,\n                \"read_only\": false,\n                \"label\": \"Заголовок\",\n                \"max_length\": 200\n            },\n            \"content\": {\n                \"type\": \"string\",\n                \"required\": true,\n                \"read_only\": false,\n                \"label\": \"Текст новини\"\n            },\n            \"created_date\": {\n                \"type\": \"datetime\",\n                \"required\": false,\n                \"read_only\": true,\n                \"label\": \"Дата створення\"\n            },\n            \"author\": {\n                \"type\": \"string\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Автор\",\n                \"max_length\": 100\n            },\n            \"image\": {\n                \"type\": \"image upload\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Зображення\",\n                \"max_length\": 100\n            },\n            \"tags\": {\n                \"type\": \"string\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Теги\",\n                \"help_text\": \"Введіть теги через кому\",\n                \"max_length\": 200\n            },\n            \"category\": {\n                \"type\": \"string\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Категорія\",\n                \"max_length\": 100\n            }\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get an article",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                      "pm.test('Response contains article fields', function () { const data = pm.response.json(); const requestedId = Number(pm.variables.get('id') || pm.request.url.variables.get('id')); pm.expect(data).to.have.property('id'); pm.expect(data.id).to.be.a('number'); if (!Number.isNaN(requestedId)) { pm.expect(data.id).to.eql(requestedId); } pm.expect(data).to.have.property('title'); pm.expect(data.title).to.be.a('string'); pm.expect(data).to.have.property('content'); pm.expect(data.content).to.be.a('string'); pm.expect(data).to.have.property('created_date'); });"
+                    ]
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/:id",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/:id",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:16:57 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "165"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 1,\n    \"title\": \"тест\",\n    \"content\": \"тестовий опис\",\n    \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n    \"author\": null,\n    \"image\": null,\n    \"tags\": null,\n    \"category\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "Update an article",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                      "pm.test('Updated article is returned', function () { const data = pm.response.json(); const requestedId = Number(pm.variables.get('id') || pm.request.url.variables.get('id')); pm.expect(data).to.have.property('id'); if (!Number.isNaN(requestedId)) { pm.expect(data.id).to.eql(requestedId); } pm.expect(data).to.have.property('title', '123'); pm.expect(data).to.have.property('content', '1'); pm.expect(data).to.have.property('created_date'); });"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4OTIxMDU5LCJpYXQiOjE3Nzc3MTE0NTksImp0aSI6IjYzMDUwNTk5ZWQxNjQ2ODliNzM2NmIxOTBjMjhmZmQ0IiwidXNlcl9pZCI6IjEifQ.t7gmz2AiaFW6wHFaHf3OoKzNAT_fBGGFzHmvsZl3u0c",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"123\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ":id",
+                    ""
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "8"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"123\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:20:04 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "133"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 1,\n    \"title\": \"123\",\n    \"content\": \"1\",\n    \"created_date\": \"2026-04-21T16:11:40.309168Z\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}"
+                },
+                {
+                  "name": "[403] Haven't permissions",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"123\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "4"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 02 May 2026 08:38:34 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "72"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"У вас нема дозволу робити цю дію.\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Get metadata article",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "OPTIONS",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ":id",
+                    ""
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "OPTIONS",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"1\",\n    \"content\": \"1\",\n    \"author\": \"1\",\n    \"image\": null,\n    \"tags\": \"1\",\n    \"category\": \"1\"\n}"
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:21:07 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "1054"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"name\": \"Article Instance\",\n    \"description\": \"\",\n    \"renders\": [\n        \"application/json\",\n        \"text/html\"\n    ],\n    \"parses\": [\n        \"application/json\",\n        \"application/x-www-form-urlencoded\",\n        \"multipart/form-data\"\n    ],\n    \"actions\": {\n        \"PUT\": {\n            \"id\": {\n                \"type\": \"integer\",\n                \"required\": false,\n                \"read_only\": true,\n                \"label\": \"ID\"\n            },\n            \"title\": {\n                \"type\": \"string\",\n                \"required\": true,\n                \"read_only\": false,\n                \"label\": \"Заголовок\",\n                \"max_length\": 200\n            },\n            \"content\": {\n                \"type\": \"string\",\n                \"required\": true,\n                \"read_only\": false,\n                \"label\": \"Текст новини\"\n            },\n            \"created_date\": {\n                \"type\": \"datetime\",\n                \"required\": false,\n                \"read_only\": true,\n                \"label\": \"Дата створення\"\n            },\n            \"author\": {\n                \"type\": \"string\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Автор\",\n                \"max_length\": 100\n            },\n            \"image\": {\n                \"type\": \"image upload\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Зображення\",\n                \"max_length\": 100\n            },\n            \"tags\": {\n                \"type\": \"string\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Теги\",\n                \"help_text\": \"Введіть теги через кому\",\n                \"max_length\": 200\n            },\n            \"category\": {\n                \"type\": \"string\",\n                \"required\": false,\n                \"read_only\": false,\n                \"label\": \"Категорія\",\n                \"max_length\": 100\n            }\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Delete an article",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "pm.test('Status code is 204', function () { pm.response.to.have.status(204); });",
+                      "pm.test('Response body is empty', function () { pm.expect(pm.response.text()).to.eql(''); });"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4OTIwMzAwLCJpYXQiOjE3Nzc3MTA3MDAsImp0aSI6IjI3NWRkZDE4Nzc0YjQ2ZjM4MTVlNTM2OGFlNzg3NDlmIiwidXNlcl9pZCI6IjcifQ.fPzShkLfG3fZ5je6ayHOCPHwEFuTWfweOumxR78LPvg",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "news",
+                    ":id",
+                    ""
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "4"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[204] Success delete",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/news/:id/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "news",
+                        ":id",
+                        ""
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "3"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Tue, 21 Apr 2026 17:22:51 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept, Cookie"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "0"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "Register user",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"student_07\",\n    \"email\": \"student_07@step.com\",\n    \"password\": \"StrongPassword123!\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/auth/register/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"username\": \"student_07\",\n    \"email\": \"student_07@step.com\",\n    \"password\": \"StrongPassword123!\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/auth/register/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "register",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 10:11:33 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "POST, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "93"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"username\": \"student_07\",\n    \"email\": \"student_07@step.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Login a user",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc4OTIwMzAwLCJpYXQiOjE3Nzc3MTA3MDAsImp0aSI6IjI3NWRkZDE4Nzc0YjQ2ZjM4MTVlNTM2OGFlNzg3NDlmIiwidXNlcl9pZCI6IjcifQ.fPzShkLfG3fZ5je6ayHOCPHwEFuTWfweOumxR78LPvg",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"student_06\",\n    // \"email\": \"student_05@step.com\",\n    \"password\": \"StrongPassword123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/auth/login/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login",
+                    ""
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"username\": \"student_06\",\n    // \"email\": \"student_05@step.com\",\n    \"password\": \"StrongPassword123!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/auth/login/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "login",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 10:13:35 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "POST, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "489"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NzE5ODQxNSwiaWF0IjoxNzc3MTEyMDE1LCJqdGkiOiI3OGEyMjUzNTRkNTM0ZWYyODEwNzYwMjk3MjBlYTEyOSIsInVzZXJfaWQiOiI3In0.AyVN3gOqyMS1cirn7NpvO25VY6R-N9-zp1iRc62JiTk\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MTEyMzE1LCJpYXQiOjE3NzcxMTIwMTUsImp0aSI6IjRhM2JhZmQ3ZGYzODQ2NTU5ODkyM2JkZWU1ZTBkMzY1IiwidXNlcl9pZCI6IjcifQ.ms-KMrMC3pwLLn1tQq-q7oXKczTSYempYwIv_SOmitg\"\n}"
+                },
+                {
+                  "name": "[401] No Active Account",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"username\": \"student_04\",\n    \"password\": \"StrongPassword123!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/auth/login/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "login",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 09:05:15 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "WWW-Authenticate",
+                      "value": "Bearer realm=\"api\""
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "POST, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "63"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"detail\": \"No active account found with the given credentials\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Refresh token",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NzE5ODQxNSwiaWF0IjoxNzc3MTEyMDE1LCJqdGkiOiI3OGEyMjUzNTRkNTM0ZWYyODEwNzYwMjk3MjBlYTEyOSIsInVzZXJfaWQiOiI3In0.AyVN3gOqyMS1cirn7NpvO25VY6R-N9-zp1iRc62JiTk\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url_local}}{{prefix}}/auth/token/refresh/",
+                  "host": [
+                    "{{base_url_local}}{{prefix}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "token",
+                    "refresh",
+                    ""
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "[200] Success Response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NzE5ODQxNSwiaWF0IjoxNzc3MTEyMDE1LCJqdGkiOiI3OGEyMjUzNTRkNTM0ZWYyODEwNzYwMjk3MjBlYTEyOSIsInVzZXJfaWQiOiI3In0.AyVN3gOqyMS1cirn7NpvO25VY6R-N9-zp1iRc62JiTk\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url_local}}{{prefix}}/auth/token/refresh/",
+                      "host": [
+                        "{{base_url_local}}{{prefix}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "token",
+                        "refresh",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Date",
+                      "value": "Sat, 25 Apr 2026 10:14:11 GMT"
+                    },
+                    {
+                      "key": "Server",
+                      "value": "WSGIServer/0.2 CPython/3.13.7"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Vary",
+                      "value": "Accept"
+                    },
+                    {
+                      "key": "Allow",
+                      "value": "POST, OPTIONS"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "DENY"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "244"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MTEyMzUxLCJpYXQiOjE3NzcxMTIwNTEsImp0aSI6ImEwNWE4ZjdmYWIyYTRkZTliNzg4YTcyYmJjYWE4NDZjIiwidXNlcl9pZCI6IjcifQ.qSnKqUHpdRehGFCadz7ufXhIG33Z6htdQRvzw-5oIWY\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('Response time is acceptable', function () { pm.expect(pm.response.responseTime).to.be.below(2000); });",
+          "pm.test('Response has a valid status code', function () { pm.expect(pm.response.code).to.be.oneOf([200, 201, 202, 204]); });"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "id",
+      "value": "1"
+    },
+    {
+      "key": "base_url",
+      "value": "https://template.postman-echo.com"
+    },
+    {
+      "key": "base_url_local",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "prefix",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
